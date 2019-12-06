@@ -1,0 +1,12 @@
+name: LootcratesExtended
+main: com.crazicrafter1.lce.Main
+version: 1.0.0
+author: crazicrafter1
+api-version: 1.13
+commands:
+  lce:
+    usage: /<command> <ruins | game>
+    permission: lce.admin
+permissions:
+  lce.admin:
+    default: op

@@ -1,0 +1,136 @@
+# Enable debugging?
+debug: false
+
+# / - \ - / - \ - / - \ - / - \ - / - \
+#
+#           QUALITY ARMORY
+#            INTEGRATION
+# / - \ - / - \ - / - \ - / - \ - / - \
+
+qa-hook: false
+
+crates:
+  rare1:
+    item: "chest"
+    name: "&5&lRare Supply Crate &r&7(Tier 4)"
+    lore:
+      - "&7Right click on this item to unlock"
+      - "&7four pieces of loot!"
+    chances:
+      regular: 13
+      ultra: 28
+      rare: 39
+      legendary: 20
+  legendary1:
+    item: "chest"
+    name: "&c&lLegendary Supply Crate &r&7(Tier 5)"
+    lore:
+      - "&7Right click on this item to unlock"
+      - "&7four pieces of loot!"
+    chances:
+      ultra: 28
+      rare: 32
+      legendary: 40
+
+loot:
+  rare1:
+    items:
+      item0:
+        item: tnt
+        range: 1 31
+      item1:
+        item: tnt
+        count: 32
+      item2:
+        item: diamond
+        count: 16
+      item3:
+        item: cactus
+        range: 1 31
+      item4:
+        qa-item: 10mmpistol
+        count: 1
+      item5:
+        qa-item: 9mm
+        count: 16
+  legendary1:
+    items:
+      item0:
+        item: tnt
+        range: 1 31
+      item1:
+        item: tnt
+        count: 32
+      item2:
+        item: diamond
+        count: 16
+      item3:
+        item: cactus
+        range: 1 31
+      item4:
+        qa-item: fusion_cell
+        count: 5
+      item5:
+        qa-item: lazerrifle
+        count: 1
+
+
+
+# / - \ - / - \ - / - \ - / - \ - / - \
+#
+#         MINIGAME SUGGESTION
+#    SoulStriker, check out his YT, https://www.youtube.com/channel/UCCCzzeKSOPipHb3tgQtekeA
+# / - \ - / - \ - / - \ - / - \ - / - \
+
+x-min: -300
+z-min: -300
+x-max: 300
+z-max: 300
+message: "&eA random crate was spawned in world &2{world} &eat &2{location}&e!"
+
+# / - \ - / - \ - / - \ - / - \ - / - \
+#
+#           WORLD GENERATION
+#
+# / - \ - / - \ - / - \ - / - \ - / - \
+
+# Enable randomly spawned crates around world?
+generation: false
+
+# Create any type of key for world name
+# i do not recommend spawning in any world other than a world similar to the overworld (grass/trees/...)
+# things just wont function as they should
+
+# chance: chance to spawn a crate per newly generated chunk.
+# chance ∈ [0, 100]
+# so a chance of 2 will be a 2% chance to spawn in a new chunk
+# - = - = - = WARNING = - = - = -
+#  - setting the value for generation.<world>.chance to values higher values will increase lagg.
+#    literally, setting the value to 75 will likely crash the server
+
+# now, each crate chance is the chance for a certain crate
+# common: 40 = 40%
+# regular: 30 = 30%
+# ultra: 15 = 15%
+# rare: 10 = 10%
+# legendary: 5 = 5%
+
+# Enable "ruin" generation? Is purely aesthetic
+ruin-generation: true
+
+generation-settings:
+  world:
+    chance: 2 #Be careful with value; default
+    crates:
+      common: 40
+      regular: 30
+      ultra: 15
+      rare: 10
+      legendary: 5
+  #world_the_nether #not safely implemented
+  #world_the_end #not safely implemented
+  #other_worlds #not safely implemented
+
+
+# Remove ruins on take?
+remove-ruins: false
