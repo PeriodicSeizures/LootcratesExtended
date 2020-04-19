@@ -12,7 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 
     //private static Main plugin;
-    private String prefix = ChatColor.DARK_PURPLE + "[LCE] : ";
+    private String prefix = ChatColor.DARK_GRAY + "[" + ChatColor.WHITE + "LCE" + ChatColor.DARK_GRAY + "] ";
     //public FileConfiguration config = null;
     public Config config;
     public GenerationHandler generation;
@@ -30,16 +30,16 @@ public class Main extends JavaPlugin {
 
         this.generation = new GenerationHandler(this);
 
-        VersionChecker updater = new VersionChecker(this, -1);
+        VersionChecker updater = new VersionChecker(this, 72032);
 
         try {
             if (updater.checkForUpdates()) {
-                important("An update was found! New version: " + ChatColor.AQUA + updater.getLatestVersion() + ChatColor.DARK_AQUA + " download: " + ChatColor.AQUA + updater.getResourceURL());
-            } else {
-                feedback("No updates were found!!");
+                important("New update : " + updater.getLatestVersion() + ChatColor.GOLD + " (" + updater.getResourceURL() + ")");            } else {
+                feedback("No updates were found!");
             }
         } catch (Exception e) {
             error("Unable to check for updates! " + e.getCause());
+            e.printStackTrace();
         }
 
         new ListenerOnChunkLoad(this);

@@ -34,9 +34,9 @@ public class CmdLCE extends BaseCommand{
                 plugin.generation.spawnCrateRuins(p.getLocation());
 
                 //p.getInventory().addItem(me.zombie_striker.qg.api.QualityArmory.getGunByName("10mmpistol").getItemStack());
-                p.getInventory().addItem(me.zombie_striker.qg.api.QualityArmory.getAmmoByName("10mmpistol").getItemStack());
+                //p.getInventory().addItem(me.zombie_striker.qg.api.QualityArmory.getAmmoByName("10mmpistol").getItemStack());
 
-                p.sendMessage("You received a 10mmpistol!");
+                //p.sendMessage("You received a 10mmpistol!");
 
                 return feedback(sender, "Spawned a crate ruins");
             }
@@ -71,7 +71,8 @@ public class CmdLCE extends BaseCommand{
             case "reload": {
                 feedback(sender, "Reloading config...");
                 plugin.reloadConfig();
-                return feedback(sender, "Config was reloaded.");
+                plugin.config.reload();
+                return feedback(sender, "Config was reloaded. Should usually restart to avoid issues.");
             }
 
         }

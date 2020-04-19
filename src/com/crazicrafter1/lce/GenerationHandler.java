@@ -1,11 +1,9 @@
 package com.crazicrafter1.lce;
 
-import com.crazicrafter1.lce.util.NMSHandler;
+//import com.crazicrafter1.lce.util.NMSHandler;
 import com.crazicrafter1.lce.util.Util;
 import com.crazicrafter1.lootcrates.LootcratesAPI;
-import com.crazicrafter1.lootcrates.config.Config;
-import net.minecraft.server.v1_14_R1.Blocks;
-import org.bukkit.Bukkit;
+import com.crazicrafter1.lootcrates.config.Crate;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -33,8 +31,14 @@ public class GenerationHandler {
     private String[] randMap = new String[100];
 
     private ItemStack randomCrate() {
-        //Bukkit.getPluginManager().getPlugin("")
-        return LootcratesAPI.getConfig().crates.get(randMap[Util.randomRange(0,99)]).getPreppedItemStack(true, 1);
+        String c = randMap[Util.randomRange(0,99)];
+        try {
+            return LootcratesAPI.getConfig().crates.get(LootcratesAPI.getConfig().crateNameIds.get(c)).getPreppedItemStack(true, 1);
+        } catch (Exception e) {
+            plugin.error("If you see this, then there are crate ids in config.yml that don't map out to Lootcrates! registered crates.");
+            throw e;
+        }
+
         //return Config.crate_items.get(randMap[Util.randomRange(0,99)]);
     }
 
@@ -45,7 +49,14 @@ public class GenerationHandler {
 
         int x = loc.getBlockX();
         int z = loc.getBlockZ();
-        int y = loc.getWorld().getHighestBlockYAt(x, z);
+        //int y = loc.getWorld().getHighestBlockYAt(x, z);
+        int y = loc.getBlockY();
+
+        while (y > 0 && w.getBlockAt(x,y,z).getType() == Material.AIR)
+            y--;
+
+        y++;
+
 
         //ArmorStand as = w.spawn(new Location(loc.getWorld(), x+1.15, y-.65, z+.25), ArmorStand.class);
         //ArmorStand as = w.spawn(new Location(loc.getWorld(), x+1.15, y-.35, z+.25), ArmorStand.class);
@@ -60,9 +71,9 @@ public class GenerationHandler {
         //as.setItemInHand(randomCrate());
         as.setHelmet(randomCrate());
         //as.setChestplate(randomCrate());
-        as.setRightArmPose(new EulerAngle(-Math.PI/12.0, Math.PI/4.0, 0));
+        //as.setRightArmPose(new EulerAngle(-Math.PI/12.0, Math.PI/4.0, 0));
         as.setGravity(false);
-        as.setAI(false);
+        //as.setAI(false);
         as.setCollidable(false);
         as.setCustomName("crateRuinsArmorStand");
 
@@ -72,7 +83,10 @@ public class GenerationHandler {
 
         if (plugin.config.areCratesRuined()) {
 
-            NMSHandler.setBlock(Blocks.CAULDRON, w, x, y, z);
+            //plugin.debug("Y: " + y);
+
+            //NMSHandler.setBlock(Blocks.CAULDRON, w, x, y, z);
+            w.getBlockAt(x, y, z).setType(Material.CAULDRON);
             //Block[] blocks = new Block[] {Blocks.COBBLESTONE, Blocks.STONE_BRICKS, Blocks.MOSSY_STONE_BRICKS, Blocks.OBSIDIAN};
             Material[] materials = new Material[]{Material.COBBLESTONE, Material.STONE_BRICKS, Material.MOSSY_STONE_BRICKS, Material.OBSIDIAN};
 

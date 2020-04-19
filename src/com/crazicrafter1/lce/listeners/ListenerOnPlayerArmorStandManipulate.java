@@ -1,8 +1,8 @@
 package com.crazicrafter1.lce.listeners;
 
 import com.crazicrafter1.lce.Main;
-import com.crazicrafter1.lce.util.NMSHandler;
-import net.minecraft.server.v1_14_R1.Blocks;
+//import com.crazicrafter1.lce.util.NMSHandler;
+//import net.minecraft.server.v1_14_R1.Blocks;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.event.EventHandler;
@@ -46,22 +46,16 @@ public class ListenerOnPlayerArmorStandManipulate extends BaseListener {
                                 switch (w.getBlockAt(x + rx, h, z + rz).getType()) {
 
                                     case CAULDRON:
-                                        NMSHandler.setBlock(Blocks.AIR, w, x + rx, h, z + rz);
+                                    case IRON_BARS:
+                                        //NMSHandler.setBlock(Blocks.AIR, w, x + rx, h, z + rz);
+                                        w.getBlockAt(x + rx, h, z + rz).setType(Material.AIR);
                                         break;
                                     case COBBLESTONE:
-                                        NMSHandler.setBlock(Blocks.GRASS_BLOCK, w, x + rx, h, z + rz);
-                                        break;
                                     case STONE_BRICKS:
-                                        NMSHandler.setBlock(Blocks.GRASS_BLOCK, w, x + rx, h, z + rz);
-                                        break;
-                                    case IRON_BARS:
-                                        NMSHandler.setBlock(Blocks.AIR, w, x + rx, h, z + rz);
-                                        break;
                                     case OBSIDIAN:
-                                        NMSHandler.setBlock(Blocks.GRASS_BLOCK, w, x + rx, h, z + rz);
-                                        break;
                                     case MOSSY_STONE_BRICKS:
-                                        NMSHandler.setBlock(Blocks.GRASS_BLOCK, w, x + rx, h, z + rz);
+                                        //NMSHandler.setBlock(Blocks.GRASS_BLOCK, w, x + rx, h, z + rz);
+                                        w.getBlockAt(x + rx, h, z + rz).setType(Material.GRASS_BLOCK);
                                         break;
 
                                 }
