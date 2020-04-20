@@ -59,3 +59,22 @@ generation-settings:
 
 # Remove ruins on take?
 remove-ruins: false
+
+# / - \ - / - \ - / - \ - / - \ - / - \
+#
+#            TIMED SPAWNING
+#   spawn crates randomly around the world?
+# / - \ - / - \ - / - \ - / - \ - / - \
+
+timed-spawn: false
+
+timed-spawn-world: "world"
+
+# in seconds
+timed-spawn-min: 300
+timed-spawn-max: 1200
+
+# an optional message? make blank to disable ("")
+timed-spawn-message: "&6A crate was spawned at {}"
+
+#area is same as x-min/max/z above

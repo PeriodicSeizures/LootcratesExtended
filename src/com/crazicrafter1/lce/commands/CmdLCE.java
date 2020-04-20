@@ -1,6 +1,7 @@
 package com.crazicrafter1.lce.commands;
 
 import com.crazicrafter1.lce.Main;
+import com.crazicrafter1.lce.config.Config;
 import com.crazicrafter1.lootcrates.Util;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -8,6 +9,7 @@ import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class CmdLCE extends BaseCommand{
 
@@ -73,6 +75,22 @@ public class CmdLCE extends BaseCommand{
                 plugin.reloadConfig();
                 plugin.config.reload();
                 return feedback(sender, "Config was reloaded. Should usually restart to avoid issues.");
+            }
+
+            case "timer": {
+
+                if (args.length == 2)
+                {
+                    boolean isOn = args[1].equals("on");
+                    //if (args[1].equals("off")) isOn = false;
+
+                    plugin.config.setTimedSpawn(isOn);
+
+                    plugin.feedback("Timer was set to " + isOn);
+
+                    //
+                }
+
             }
 
         }

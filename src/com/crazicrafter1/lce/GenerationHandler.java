@@ -30,6 +30,42 @@ public class GenerationHandler {
 
     private String[] randMap = new String[100];
 
+    public void spawnCrate(Location loc)
+    {
+        //Location loc = new Location(e.getWorld(), x, e.getWorld().getHighestBlockYAt(x, z), z, 0, 0);
+        World w = loc.getWorld();
+
+        int x = loc.getBlockX();
+        int z = loc.getBlockZ();
+        //int y = loc.getWorld().getHighestBlockYAt(x, z);
+        int y = loc.getBlockY();
+
+        while (y > 0 && w.getBlockAt(x,y,z).getType() == Material.AIR)
+            y--;
+
+        y++;
+
+
+        //ArmorStand as = w.spawn(new Location(loc.getWorld(), x+1.15, y-.65, z+.25), ArmorStand.class);
+        //ArmorStand as = w.spawn(new Location(loc.getWorld(), x+1.15, y-.35, z+.25), ArmorStand.class);
+        ArmorStand as = w.spawn(new Location(loc.getWorld(), x+.5, y-1.4, z+.5), ArmorStand.class);
+
+        //e.getWorld().dropItemNaturally(loc, randomCrate());
+
+        as.setArms(true);
+        as.setBasePlate(false);
+        as.setVisible(false);
+        as.setInvulnerable(true);
+        //as.setItemInHand(randomCrate());
+        as.setHelmet(randomCrate());
+        //as.setChestplate(randomCrate());
+        //as.setRightArmPose(new EulerAngle(-Math.PI/12.0, Math.PI/4.0, 0));
+        as.setGravity(false);
+        //as.setAI(false);
+        as.setCollidable(false);
+        as.setCustomName("crateRuinsArmorStand");
+    }
+
     private ItemStack randomCrate() {
         String c = randMap[Util.randomRange(0,99)];
         try {

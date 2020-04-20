@@ -5,9 +5,14 @@ import com.crazicrafter1.lce.config.Config;
 import com.crazicrafter1.lce.listeners.ListenerOnChunkLoad;
 import com.crazicrafter1.lce.listeners.ListenerOnPlayerArmorStandManipulate;
 import com.crazicrafter1.lce.tabcompleters.TabLCE;
+import com.crazicrafter1.lce.util.Util;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class Main extends JavaPlugin {
 
@@ -16,6 +21,8 @@ public class Main extends JavaPlugin {
     //public FileConfiguration config = null;
     public Config config;
     public GenerationHandler generation;
+
+    public boolean TIMED_SPAWN_SYNC_ENABLED = false;
 
     @Override
     public void onEnable() {
@@ -48,6 +55,69 @@ public class Main extends JavaPlugin {
         new CmdLCE(this);
 
         new TabLCE(this);
+
+        if (config.isTimeSpawnEnabled()) setTimedSpawning(true);
+    }
+
+    @Override
+    public void onDisable() {
+        super.onDisable();
+
+        saveConfig();
+
+        stopTimedSpawn();
+    }
+
+    public void setTimedSpawning(boolean b)
+    {
+        if (b && !TIMED_SPAWN_SYNC_ENABLED) startTimedSpawn();
+        else stopTimedSpawn();
+    }
+
+    private void stopTimedSpawn()
+    {
+        this.getServer().getScheduler().cancelTasks(this);
+        TIMED_SPAWN_SYNC_ENABLED = false;
+    }
+
+    private void startTimedSpawn()
+    {
+//        config.file.set("timed-spawn", true);
+
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+
+                // now spawn
+
+                int[] b = config.getNaturalGenBounds();
+
+                int x = Util.randomRange(b[0], b[2]);
+                int z = Util.randomRange(b[1], b[3]);
+
+                Location randLoc = new Location(Bukkit.getWorld(getConfig().getString("timed-spawn-world")), x, 255, z);
+
+                generation.spawnCrate(randLoc);
+
+                if (!getConfig().getString("timed-spawn.message").isEmpty())
+                {
+                    // then broadcast
+
+                    String m = getConfig().getString("timed-spawn-message");
+
+                    m.replaceAll("\\{}", "" + x + " " + z);
+
+                    m = ChatColor.translateAlternateColorCodes(
+                            '&', m);
+                    
+                    Bukkit.broadcast(m
+                            , "lce.cratespawn");
+                }
+
+                startTimedSpawn();
+            }
+        }.runTaskLater(this,
+                Util.randomRange(config.getMinSpawnTime(), config.getMaxSpawnTime()));
     }
 
     public boolean feedback(String s) {

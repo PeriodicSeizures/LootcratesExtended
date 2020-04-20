@@ -1,49 +1,60 @@
 package com.crazicrafter1.lce.config;
 
 import com.crazicrafter1.lce.Main;
-import com.crazicrafter1.lootcrates.ItemBuilder;
-import com.crazicrafter1.lootcrates.LootcratesAPI;
-import com.crazicrafter1.lootcrates.Util;
-import com.crazicrafter1.lootcrates.config.Crate;
-import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
 
 public class Config {
 
     private static Main plugin;
 
-    private FileConfiguration configFile;
+    private static FileConfiguration file;
 
     public boolean isDebugEnabled() {
-        return configFile.getBoolean("debug");
+        return file.getBoolean("debug");
     }
 
     public boolean areCratesRuined() {
-        return configFile.getBoolean("ruin-generation");
+        return file.getBoolean("ruin-generation");
     }
 
     public boolean isNaturalCrateGenEnabled() {
-        return configFile.getBoolean("generation");
+        return file.getBoolean("generation");
     }
 
     public boolean areRuinsRemovable() {
-        return configFile.getBoolean("remove-ruins");
+        return file.getBoolean("remove-ruins");
+    }
+
+    public boolean isTimeSpawnEnabled() {
+        return file.getBoolean("timed-spawn");
+    }
+
+    public int getMinSpawnTime()
+    {
+        return file.getInt("timed-spawn-min");
+    }
+
+    public int getMaxSpawnTime()
+    {
+        return file.getInt("timed-spawn-max");
+    }
+
+    public void setTimedSpawn(boolean b)
+    {
+        file.set("timed-spawn", b);
     }
 
     public int[] getNaturalGenBounds() {
-        return new int[] {configFile.getInt("x-min"),
-            configFile.getInt("z-min"),
-            configFile.getInt("x-max"),
-            configFile.getInt("z-max")};
+        return new int[] {file.getInt("x-min"),
+            file.getInt("z-min"),
+            file.getInt("x-max"),
+            file.getInt("z-max")};
     }
 
     public String getBroadcastMessage() {
-        return configFile.getString("message");
+        return file.getString("message");
     }
 
     // worldname, chance
@@ -56,22 +67,22 @@ public class Config {
         Config.plugin = plugin;
 
         plugin.saveDefaultConfig();
-        configFile = plugin.getConfig();
+        file = plugin.getConfig();
     }
 
     public void reload() {
-        //configFile.
+        //file.
         plugin.reloadConfig();
         load();
     }
 
     public boolean load() {
-        crateSpawnWorldChances = new HashMap<>(); // = new ArrayList<>(configFile.getConfigurationSection("world-generation").getKeys(false));
+        crateSpawnWorldChances = new HashMap<>(); // = new ArrayList<>(file.getConfigurationSection("world-generation").getKeys(false));
         crateTypeWorldChances = new HashMap<>();
-        for (String worldName : configFile.getConfigurationSection("generation-settings").getKeys(false)) {
-            crateSpawnWorldChances.put(worldName, configFile.getInt("generation-settings."+worldName+".chance"));
-            for (String crateType : configFile.getConfigurationSection("generation-settings."+worldName+".crates").getKeys(false)) {
-                crateTypeWorldChances.put(crateType, configFile.getInt("generation-settings."+worldName+".crates."+crateType));
+        for (String worldName : file.getConfigurationSection("generation-settings").getKeys(false)) {
+            crateSpawnWorldChances.put(worldName, file.getInt("generation-settings."+worldName+".chance"));
+            for (String crateType : file.getConfigurationSection("generation-settings."+worldName+".crates").getKeys(false)) {
+                crateTypeWorldChances.put(crateType, file.getInt("generation-settings."+worldName+".crates."+crateType));
             }
         }
 
