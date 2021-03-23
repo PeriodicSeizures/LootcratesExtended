@@ -11,7 +11,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../buildtools/1.14.4 stuff/Spigot/Spigot-API/target/spigot-api-1.14.4-R0.1-SNAPSHOT-shaded.jar!/" />
+          <root url="jar://D:/MinecraftDev/Servers/1.16.5 crates/plugins/LootCrates.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -20,7 +20,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../Servers/1.12.2_siege/plugins/LootCrates.jar!/" />
+          <root url="jar://D:/MinecraftDev/Plugins/buildtools/1.16.4/Spigot/Spigot-API/target/spigot-api-1.16.4-R0.1-SNAPSHOT-shaded.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

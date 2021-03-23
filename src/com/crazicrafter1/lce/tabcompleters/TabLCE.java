@@ -17,8 +17,21 @@ public class TabLCE extends BaseTabCompleter {
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
         List<String> list = new ArrayList<>();
 
-        list.add("game");
-        list.add("ruins");
+        switch (args.length) {
+            case 1: {
+                list.add("game");
+                list.add("ruins");
+                list.add("reload");
+                list.add("timer");
+                break;
+            }case 2: {
+                if (args[0].equals("timer")) {
+                    list.add("on");
+                    list.add("off");
+                }
+                break;
+            }
+        }
 
         return list;
     }

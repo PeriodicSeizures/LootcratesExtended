@@ -64,7 +64,7 @@ public class ListenerOnChunkLoad extends BaseListener {
                 int h = w.getHighestBlockYAt(x, z)-1;
 
                 for (int y = h; y>h-4; y--) {
-                    if (w.getBlockAt(x, y, z).getType() == Material.GRASS_BLOCK) return new Location(w, x, y, z);
+                    if (w.getBlockAt(x, y, z).getType() == Material.GRASS) return new Location(w, x, y, z);
                 }
 
                 signX*=-1;

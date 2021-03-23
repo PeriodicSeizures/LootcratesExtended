@@ -20,60 +20,54 @@ public class ListenerOnPlayerArmorStandManipulate extends BaseListener {
 
         //e.getRightClicked().setCustomName();
         if (e.getRightClicked().getCustomName() != null && e.getRightClicked().getCustomName().equals("crateRuinsArmorStand")) {
-            if (e.getPlayerItem().getType() == Material.AIR) {
-                plugin.debug("ArmorStandManipulate : armorstand would have been removed (not removed due to debug)), hopefully giving item");
-                //e.getRightClicked().remove();
 
-                if (plugin.config.areCratesRuined() && plugin.config.areRuinsRemovable()) {
-                    World w = e.getRightClicked().getLocation().getWorld();
-                    int x = e.getRightClicked().getLocation().getBlockX();
-                    int y = e.getRightClicked().getLocation().getBlockY();
-                    int z = e.getRightClicked().getLocation().getBlockZ();
+            World w = e.getRightClicked().getLocation().getWorld();
 
-                    //Block[] blocks = new Block[] {Blocks.COBBLESTONE, Blocks.STONE_BRICKS, Blocks.MOSSY_STONE_BRICKS, Blocks.OBSIDIAN};
-                    Material[] materials = new Material[]{Material.COBBLESTONE, Material.STONE_BRICKS, Material.MOSSY_STONE_BRICKS, Material.OBSIDIAN};
 
-                    int r = 4;
+            if (e.getPlayerItem().getType() != Material.AIR)
+            {
+                e.setCancelled(true);
 
-                    for (int rx = -r; rx < r; rx++) {
+                w.dropItemNaturally(e.getRightClicked().getLocation(), e.getRightClicked().getHelmet());
+            }
 
-                        for (int rz = -r; rz < r; rz++) {
+            e.getRightClicked().remove();
 
-                            for (int ry = -r - 1; ry < r + 1; ry++) {
+            if (plugin.config.areCratesRuined() && plugin.config.areRuinsRemovable()) {
+                int x = e.getRightClicked().getLocation().getBlockX();
+                int y = e.getRightClicked().getLocation().getBlockY();
+                int z = e.getRightClicked().getLocation().getBlockZ();
+                //Block[] blocks = new Block[] {Blocks.COBBLESTONE, Blocks.STONE_BRICKS, Blocks.MOSSY_STONE_BRICKS, Blocks.OBSIDIAN};
+                Material[] materials = new Material[]{Material.COBBLESTONE, Material.OBSIDIAN};
 
-                                int h = y + ry;
+                int r = 4;
 
-                                switch (w.getBlockAt(x + rx, h, z + rz).getType()) {
+                for (int rx = -r; rx < r; rx++) {
 
-                                    case CAULDRON:
-                                    case IRON_BARS:
-                                        //NMSHandler.setBlock(Blocks.AIR, w, x + rx, h, z + rz);
-                                        w.getBlockAt(x + rx, h, z + rz).setType(Material.AIR);
-                                        break;
-                                    case COBBLESTONE:
-                                    case STONE_BRICKS:
-                                    case OBSIDIAN:
-                                    case MOSSY_STONE_BRICKS:
-                                        //NMSHandler.setBlock(Blocks.GRASS_BLOCK, w, x + rx, h, z + rz);
-                                        w.getBlockAt(x + rx, h, z + rz).setType(Material.GRASS_BLOCK);
-                                        break;
+                    for (int rz = -r; rz < r; rz++) {
 
-                                }
+                        for (int ry = -r - 1; ry < r + 1; ry++) {
+
+                            int h = y + ry;
+
+                            switch (w.getBlockAt(x + rx, h, z + rz).getType()) {
+
+                                case CAULDRON:
+                                //case IRON_BARDING:
+                                    //NMSHandler.setBlock(Blocks.AIR, w, x + rx, h, z + rz);
+                                    w.getBlockAt(x + rx, h, z + rz).setType(Material.AIR);
+                                    break;
+                                case COBBLESTONE:
+                                case OBSIDIAN:
+                                    //NMSHandler.setBlock(Blocks.GRASS_BLOCK, w, x + rx, h, z + rz);
+                                    w.getBlockAt(x + rx, h, z + rz).setType(Material.GRASS);
+                                    break;
 
                             }
                         }
                     }
                 }
-
-
-            } else {
-                plugin.debug("ArmorStandInteract Cancelled (due to player not clicking with open hand)");
-                e.setCancelled(true);
             }
-
-
         }
-
     }
-
 }

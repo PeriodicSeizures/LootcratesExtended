@@ -3,6 +3,7 @@ package com.crazicrafter1.lce.config;
 import com.crazicrafter1.lce.Main;
 import org.bukkit.configuration.file.FileConfiguration;
 
+import java.io.File;
 import java.util.HashMap;
 
 public class Config {
@@ -10,6 +11,8 @@ public class Config {
     private static Main plugin;
 
     private static FileConfiguration file;
+
+    private String worldName;
 
     public boolean isDebugEnabled() {
         return file.getBoolean("debug");
@@ -57,6 +60,10 @@ public class Config {
         return file.getString("message");
     }
 
+    public String getWorldName() {
+        return this.worldName;
+    }
+
     // worldname, chance
     public HashMap<String, Integer> crateSpawnWorldChances;
 
@@ -66,24 +73,28 @@ public class Config {
     public Config(Main plugin) {
         Config.plugin = plugin;
 
-        plugin.saveDefaultConfig();
         file = plugin.getConfig();
     }
 
-    public void reload() {
-        //file.
-        plugin.reloadConfig();
-        load();
+    public int getMinTPS() {
+        return file.getInt("spawn-tps");
     }
 
     public boolean load() {
+        if (!new File(plugin.getDataFolder(), "config.yml").exists()) {
+            plugin.saveDefaultConfig();
+        }
+        plugin.reloadConfig();
+
         crateSpawnWorldChances = new HashMap<>(); // = new ArrayList<>(file.getConfigurationSection("world-generation").getKeys(false));
         crateTypeWorldChances = new HashMap<>();
+
         for (String worldName : file.getConfigurationSection("generation-settings").getKeys(false)) {
             crateSpawnWorldChances.put(worldName, file.getInt("generation-settings."+worldName+".chance"));
             for (String crateType : file.getConfigurationSection("generation-settings."+worldName+".crates").getKeys(false)) {
                 crateTypeWorldChances.put(crateType, file.getInt("generation-settings."+worldName+".crates."+crateType));
             }
+            this.worldName = worldName;
         }
 
         return true;

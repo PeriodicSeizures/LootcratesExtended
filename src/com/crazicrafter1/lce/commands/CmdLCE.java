@@ -72,8 +72,8 @@ public class CmdLCE extends BaseCommand{
 
             case "reload": {
                 feedback(sender, "Reloading config...");
-                plugin.reloadConfig();
-                plugin.config.reload();
+                //plugin.saveConfig();
+                plugin.config.load();
                 return feedback(sender, "Config was reloaded. Should usually restart to avoid issues.");
             }
 
@@ -86,7 +86,7 @@ public class CmdLCE extends BaseCommand{
 
                     plugin.config.setTimedSpawn(isOn);
 
-                    plugin.feedback("Timer was set to " + isOn);
+                    return plugin.feedback(sender, "Timer was set to " + isOn);
 
                     //
                 }
