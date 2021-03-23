@@ -47,11 +47,9 @@ generation-settings:
   world:
     chance: 2 #Be careful with value; default
     crates:
-      common: 40
-      regular: 30
-      ultra: 15
-      rare: 10
-      legendary: 5
+      peasant: 75
+      knight: 20
+      king: 5
   #world_the_nether #not safely implemented
   #world_the_end #not safely implemented
   #other_worlds #not safely implemented
