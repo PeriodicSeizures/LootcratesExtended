@@ -1,7 +1,7 @@
 package com.crazicrafter1.lce.listeners;
 
 import com.crazicrafter1.lce.Main;
-import com.crazicrafter1.lootcrates.Util;
+import com.crazicrafter1.lootcrates.util.Util;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;

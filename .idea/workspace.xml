@@ -7,7 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d8ee943-29c6-490a-879f-a0642d227826" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LootcratesExtended.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LootcratesExtended.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/crazicrafter1/lce/GenerationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/crazicrafter1/lce/GenerationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/crazicrafter1/lce/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/crazicrafter1/lce/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/crazicrafter1/lce/commands/CmdLCE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/crazicrafter1/lce/commands/CmdLCE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/crazicrafter1/lce/listeners/ListenerOnChunkLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/crazicrafter1/lce/listeners/ListenerOnChunkLoad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/crazicrafter1/lce/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/crazicrafter1/lce/UNUSED/util/Util.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/GenerationHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,11 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/listeners/ListenerOnChunkLoad.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -66,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+            <state relative-caret-position="1360">
+              <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -78,12 +81,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/config/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
+            <state relative-caret-position="629">
               <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#996#997#0" expanded="true" />
-                <element signature="e#1038#1039#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/commands/CmdLCE.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+            <state relative-caret-position="323">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,7 +105,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/tabcompleters/TabLCE.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="527">
               <caret line="38" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -116,8 +117,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-971">
-              <caret line="114" column="63" selection-start-line="114" selection-start-column="63" selection-end-line="114" selection-end-column="63" />
+            <state relative-caret-position="170">
+              <caret line="145" column="35" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,22 +163,22 @@
         <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/ConfigHandler.java" />
         <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/Config.java" />
         <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/qahook/QualityArmoryHook.java" />
-        <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/listeners/ListenerOnChunkLoad.java" />
         <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/util/Util.java" />
         <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/listeners/ListenerOnPlayerArmorStandManipulate.java" />
         <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/tabcompleters/TabLCE.java" />
-        <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/Main.java" />
         <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/config/Config.java" />
-        <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/commands/CmdLCE.java" />
-        <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/GenerationHandler.java" />
         <option value="$PROJECT_DIR$/plugin.yml" />
         <option value="$PROJECT_DIR$/config.yml" />
+        <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/commands/CmdLCE.java" />
+        <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/listeners/ListenerOnChunkLoad.java" />
+        <option value="$PROJECT_DIR$/src/com/crazicrafter1/lce/GenerationHandler.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="104" />
+    <option name="x" value="208" />
+    <option name="y" value="75" />
     <option name="width" value="1202" />
     <option name="height" value="677" />
   </component>
@@ -184,7 +188,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,26 +257,18 @@
               <item name="lce" type="462c0819:PsiDirectoryNode" />
               <item name="tabcompleters" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="LootcratesExtended" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LootcratesExtended" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="crazicrafter1" type="462c0819:PsiDirectoryNode" />
-              <item name="lce" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last.edited.regexp" value="Sample Text" />
-    <property name="last_opened_file_path" value="D:/MinecraftDev/Servers/1.16.5 crates/plugins" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="D:/MinecraftDev/Servers/1.16.5 crates/plugins/LootCrates.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -284,6 +279,7 @@
       <recent name="com.crazicrafter1.lce.listeners" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\LootcratesExtended\src\com\crazicrafter1\lce\UNUSED" />
       <recent name="D:\Minecraft Dev\Plugins\LootcratesExtended\src\com\crazicrafter1\lce\UNUSED" />
       <recent name="D:\Minecraft Dev\LootcratesExtended\src\com\crazicrafter1\lce\UNUSED" />
     </key>
@@ -314,10 +310,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15616967" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18573265" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -332,7 +328,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.14266488" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.10363392" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.101181686" />
@@ -409,7 +405,7 @@
     <entry file="jar://$PROJECT_DIR$/../buildtools/1.8.8 STUFF/CraftBukkit/target/craftbukkit-1.8.8-R0.1-SNAPSHOT.jar!/org/bukkit/entity/ArmorStand.class" />
     <entry file="jar://$PROJECT_DIR$/../buildtools/1.8.8 STUFF/CraftBukkit/target/craftbukkit-1.8.8-R0.1-SNAPSHOT.jar!/org/bukkit/craftbukkit/v1_8_R3/entity/CraftArmorStand.class" />
     <entry file="jar://$PROJECT_DIR$/../buildtools/1.8.8 STUFF/CraftBukkit/target/craftbukkit-1.8.8-R0.1-SNAPSHOT.jar!/net/minecraft/server/v1_8_R3/EntityArmorStand.class" />
-    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/util/Util.java">
+    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/UNUSED/util/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2193">
           <caret line="149" selection-start-line="149" selection-end-line="149" />
@@ -436,69 +432,10 @@
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa16748.11812/Main.class" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa16748.16104/Main$2.class" />
     <entry file="jar://$PROJECT_DIR$/../buildtools/1.8.0 stuff/CraftBukkit/target/craftbukkit-1.8-R0.1-SNAPSHOT.jar!/org/bukkit/entity/ArmorStand.class" />
-    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/listeners/ListenerOnChunkLoad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/listeners/ListenerOnPlayerArmorStandManipulate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/tabcompleters/TabLCE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/commands/CmdLCE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/config/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#996#997#0" expanded="true" />
-            <element signature="e#1038#1039#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-971">
-          <caret line="114" column="63" selection-start-line="114" selection-start-column="63" selection-end-line="114" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/GenerationHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -514,8 +451,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        <state relative-caret-position="1360">
+          <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/config/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/tabcompleters/TabLCE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/commands/CmdLCE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="145" column="35" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/listeners/ListenerOnChunkLoad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/crazicrafter1/lce/GenerationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

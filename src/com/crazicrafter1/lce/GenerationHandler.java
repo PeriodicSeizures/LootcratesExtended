@@ -1,7 +1,7 @@
 package com.crazicrafter1.lce;
 
-import com.crazicrafter1.lce.util.Util;
 import com.crazicrafter1.lootcrates.crate.Crate;
+import com.crazicrafter1.lootcrates.util.Util;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -117,7 +117,7 @@ public class GenerationHandler {
                 TODO:
                 fix seasonal in LootCrates
              */
-            return crate.getPreppedItemStack(false, 1);
+            return crate.getItemStack(1);
         } else {
             plugin.error("Crate " + c + " doesn't exist");
         }

@@ -5,7 +5,7 @@ import com.crazicrafter1.lce.config.Config;
 import com.crazicrafter1.lce.listeners.ListenerOnChunkLoad;
 import com.crazicrafter1.lce.listeners.ListenerOnPlayerArmorStandManipulate;
 import com.crazicrafter1.lce.tabcompleters.TabLCE;
-import com.crazicrafter1.lce.util.Util;
+import com.crazicrafter1.lootcrates.util.Util;
 import org.bukkit.*;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.ArmorStand;

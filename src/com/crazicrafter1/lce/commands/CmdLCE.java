@@ -1,15 +1,13 @@
 package com.crazicrafter1.lce.commands;
 
 import com.crazicrafter1.lce.Main;
-import com.crazicrafter1.lce.config.Config;
-import com.crazicrafter1.lootcrates.Util;
+import com.crazicrafter1.lootcrates.util.Util;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
 
 public class CmdLCE extends BaseCommand{
 
